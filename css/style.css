@@ -1,0 +1,192 @@
+:root {
+  --primary: #f16625;
+  --color-gray: #6F6956;
+  --primary-dark: #d4551a;
+  --secondary: #111111;
+  --white: #ffffff;
+  --text: #444444;
+  --heading: #1b1b1b;
+  --border: #ececec;
+  --bg: #fafafa;
+  --transition: 0.35s ease;
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  --radius: 10px;
+  --container: 1440px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: var(--text);
+  background: #fff;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  transition: var(--transition);
+}
+
+a {
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a,
+button {
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.container {
+  max-width: var(--container);
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-color-gray {
+  color: var(--color-gray) !important;
+}
+
+.bg-primary {
+  background: var(--primary) !important;
+}
+
+.rounded-xl {
+  border-radius: 18px;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.shadow-custom {
+  box-shadow: var(--shadow);
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.section-padding-sm {
+  padding: 70px 0;
+}
+
+.zoom-hover {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.zoom-hover img:hover {
+  transform: scale(1.08);
+}
+
+/*==================================================
+  SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f3f3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+::selection {
+  background: var(--primary);
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Satoshi', sans-serif;
+  color: var(--heading);
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.header-contanier {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.00);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.navbar-img-box {
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  padding: 10px;
+}
+
+.navbar-img-box img {
+  aspect-ratio: 142.00/43.40;
+  flex-shrink: 0;
+  align-self: stretch;
+  max-height: 50px;
+}
+
+.left-nav-container span,
+.admission-btn {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.admission-btn {
+  border-radius: 12.8px;
+  border: 1px solid #F16625;
+  background: linear-gradient(180deg, #F16625 0%, #F58A2B 100%);
+  padding: 13.6px 18.4px;
+  gap: 9.6px;
+}
+
+.admission-btn:hover {
+  background: var(--primary-dark);
+  color: #fff;
+}
+
+@media(max-width:768px) {
+  .admission-btn {
+    padding: 14px;
+    gap: 6px;
+  }
+}
