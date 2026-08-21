@@ -8,6 +8,10 @@
   --heading: #1b1b1b;
   --border: #ececec;
   --bg: #fafafa;
+  --bg-blue: #1C3D93;
+  --bg-pink: #E9B3FB;
+  --bg-cream: #FFF0C6;
+  --accent-orange: #f26822;
   --transition: 0.35s ease;
   --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
   --radius: 10px;
@@ -182,6 +186,115 @@ h6 {
 .admission-btn:hover {
   background: var(--primary-dark);
   color: #fff;
+}
+
+.text-orange {
+  color: var(--accent-orange) !important;
+}
+
+.bg-cream {
+  background-color: var(--bg-cream) !important;
+}
+
+.btn-orange {
+  background-color: var(--accent-orange);
+  color: #fff;
+  border: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.btn-orange:hover {
+  background-color: #d85718;
+  color: #fff;
+}
+
+.x-small {
+  font-size: 0.75rem;
+}
+
+.tracking-wide {
+  letter-spacing: 1px;
+}
+
+.tracking-widest {
+  letter-spacing: 2px;
+}
+
+/* Main Card Background */
+.hero-card {
+  background-color: var(--bg-blue);
+  border-radius: 24px;
+}
+
+.strike-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+/* Right Section Positioning */
+.pink-bg-card {
+  position: absolute;
+  right: 0;
+  top: 5%;
+  width: 80%;
+  height: 90%;
+  background-color: var(--bg-pink);
+  z-index: 1;
+}
+
+.orange-square {
+  position: absolute;
+  top: 15%;
+  right: 48%;
+  width: 70px;
+  height: 70px;
+  background-color: var(--accent-orange);
+  z-index: 2;
+}
+
+/* Overlaying People Image */
+.people-img {
+  position: absolute;
+  bottom: 0;
+  right: 28%;
+  max-height: 85%;
+  object-fit: contain;
+}
+
+/* Floating White Booking Card */
+.booking-card {
+  position: relative;
+  width: 380px;
+  margin-right: 5%;
+  background-color: var(--bg-cream);
+}
+
+.min-height-500 {
+  min-height: 550px;
+}
+
+/* Mobile Responsiveness Overrides */
+@media (max-width: 991.98px) {
+  .pink-bg-card {
+    width: 100%;
+  }
+
+  .people-img {
+    position: relative;
+    right: auto;
+    max-height: 300px;
+    margin-bottom: -30px;
+  }
+
+  .booking-card {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .orange-square {
+    display: none;
+  }
 }
 
 @media(max-width:768px) {
