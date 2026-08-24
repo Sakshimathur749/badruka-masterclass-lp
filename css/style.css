@@ -30,6 +30,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.w-fit-content {
+  width: fit-content !important;
+}
+
 
 body {
   font-family: "Poppins", "DM Sans", sans-serif;
