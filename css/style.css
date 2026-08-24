@@ -28,6 +28,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden !important;
 }
 
 .w-fit-content {
@@ -906,13 +907,14 @@ BOTTOM
     font-size: 11px;
   }
 
-  .stat-number,
+
   .form-header,
   .logo-container-heading,
   .venue-head {
     font-size: 24px;
   }
 
+  .stat-number,
   .reframe-text,
   .quote-title {
     font-size: 20px;
