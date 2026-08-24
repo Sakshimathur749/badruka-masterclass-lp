@@ -96,20 +96,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize first card active & start autoplay
     activateCard(0);
     startAutoplay();
-});
-document.addEventListener("DOMContentLoaded", function () {
-    const admissionForm = document.getElementById("admissionForm");
-
-    if (!admissionForm) return;
-
-    document.querySelectorAll("button").forEach(function (button) {
-        button.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            admissionForm.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        });
-    });
-});
+}); 
