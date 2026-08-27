@@ -644,19 +644,44 @@ BOTTOM
   transform: rotate(90deg);
 }
 
-/* .reframe-section::before { */
-/* content: ""; */
-/* position: absolute; */
-/* top: 0; */
-/* left: 0; */
-/* width: 100%; */
-/* height: 100%; */
-/* background-image: url('../images/Container_margin.webp');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain; */
-/* opacity: 0.6; */
-/* } */
+/* Base styles for both background pattern images */
+.reframe-bg-pattern {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  /* Keeps pattern behind content */
+}
+
+/* Ensure inner content stays on top of patterns */
+.reframe-section .form-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Top Left Pattern Positioning */
+.reframe-pattern-left {
+  top: 20%;
+  left: -80px;
+  transform: translateY(-50%);
+  width: 280px;
+  /* Adjust size based on your image dimensions */
+  height: auto;
+  mix-blend-mode: luminosity;
+  aspect-ratio: 33/43;
+
+}
+
+/* Bottom Right Pattern Positioning */
+.reframe-pattern-right {
+  bottom: -40px;
+  right: -90px;
+  width: 320px;
+  transform: rotate(180deg);
+  aspect-ratio: 33/43;
+  /* Adjust size based on your image dimensions */
+  height: auto;
+  mix-blend-mode: luminosity;
+}
 
 .nobody-container-heading {
   font-size: 61.96px;
