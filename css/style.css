@@ -420,10 +420,14 @@ h6 {
 .stat-number,
 .form-header,
 .logo-container-heading,
-.reframe-text,
 .venue-head {
   font-size: 30px;
   line-height: 36px;
+}
+
+.reframe-text {
+  font-size: 28px;
+  line-height: 32px;
 }
 
 .form-container {
@@ -561,6 +565,10 @@ h6 {
 
 .max-w-460px {
   max-width: 460px !important;
+}
+
+.max-w-800px {
+  max-width: 800px !important;
 }
 
 .pgdm-student {
