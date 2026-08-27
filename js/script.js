@@ -1,41 +1,4 @@
-const targetValues = {
-    days: 15,
-    hours: 8,
-    minutes: 45
-};
-
-// Counter Animation Function
-function animateCounter(id, targetValue, duration = 2000) {
-    const element = document.getElementById(id);
-    if (!element) return;
-
-    let startTimestamp = null;
-    const startValue = 0;
-
-    function step(timestamp) {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-
-        // Current animated number calculation
-        const currentValue = Math.floor(progress * (targetValue - startValue) + startValue);
-
-        // Single digit numbers par leading zero (05, 08) add karein
-        element.innerText = String(currentValue).padStart(2, '0');
-
-        if (progress < 1) {
-            window.requestAnimationFrame(step);
-        }
-    }
-
-    window.requestAnimationFrame(step);
-}
-
 // Page load hone par animation trigger karein
-document.addEventListener("DOMContentLoaded", () => {
-    animateCounter("days", targetValues.days);
-    animateCounter("hours", targetValues.hours);
-    animateCounter("minutes", targetValues.minutes);
-});
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.bsm-card');
     const mainImg = document.getElementById('activeImg');
@@ -96,4 +59,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize first card active & start autoplay
     activateCard(0);
     startAutoplay();
-}); 
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const durationDays = 15;
+    const durationHours = 8;
+    const durationMinutes = 45;
+
+    // Calculate Target Date (Current Time + Duration)
+    const targetDate = new Date().getTime() +
+        (durationDays * 24 * 60 * 60 * 1000) +
+        (durationHours * 60 * 60 * 1000) +
+        (durationMinutes * 60 * 1000);
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const difference = targetDate - now;
+
+        if (difference <= 0) {
+            document.getElementById('days').innerText = '00';
+            document.getElementById('hours').innerText = '00';
+            document.getElementById('minutes').innerText = '00';
+            return;
+        }
+
+        // Time conversion math
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+
+        // Output values with 2-digit format
+        document.getElementById('days').innerText = String(days).padStart(2, '0');
+        document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+        document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+    }
+
+    // Run immediately and update every second
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+});

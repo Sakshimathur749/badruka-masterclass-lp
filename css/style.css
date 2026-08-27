@@ -17,7 +17,7 @@
   --transition: 0.35s ease;
   --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
   --radius: 10px;
-  --container: 1440px;
+  --container: 1160px;
 }
 
 * {
@@ -164,6 +164,10 @@ p {
   min-width: 64px !important;
 }
 
+.min-w-80px {
+  min-width: 80px !important;
+}
+
 h1,
 h2,
 h3,
@@ -200,6 +204,7 @@ h6 {
 
 .left-nav-container span,
 .admission-btn,
+.admission-btn-white,
 .hero-table-box,
 .stat-label,
 .form-row-span,
@@ -208,7 +213,8 @@ h6 {
 .image-bottom-bar span,
 .bsm-para,
 .feature-description,
-.masterclass-para {
+.masterclass-para,
+.venue-text {
   font-size: 14px;
   line-height: 20px;
 }
@@ -224,6 +230,17 @@ h6 {
 .admission-btn:hover {
   background: var(--primary-dark);
   color: #fff;
+}
+
+.admission-btn-white {
+  border-radius: 12.8px;
+  border: 1px solid #E6E1D3;
+  background: #FFF;
+  display: flex;
+  padding: 12.16px 16px;
+  justify-content: center;
+  align-items: center;
+  font-size: 12.8px;
 }
 
 .text-orange {
@@ -826,11 +843,13 @@ BOTTOM
   }
 
   .image-bottom-bar span,
-  .admission-btn {
-    font-size: 11px;
+  .admission-btn,
+  .admission-btn-white {
+    font-size: 13px;
   }
 
-  .admission-btn {
+  .admission-btn,
+  .admission-btn-white {
     padding: 10px 12px;
   }
 
@@ -996,7 +1015,9 @@ BOTTOM
 }
 
 @media(max-width:768px) {
-  .admission-btn {
+
+  .admission-btn,
+  .admission-btn-white {
     padding: 14px 12px;
     gap: 6px;
   }
